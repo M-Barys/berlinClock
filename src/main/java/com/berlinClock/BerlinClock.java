@@ -8,23 +8,23 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 
 public class BerlinClock {
-    int oneMinutesMod;
-    String oneMinuteRow = "OOOO";
-    String currentOneMinuteRow = "OOOO";
-    int fiveMinutesDiv;
-    int fiveMinutesDiv15;
-    String fiveMinuteRow = "OOOOOOOOOOO";
-    String currentFiveMinuteRow = "OOOOOOOOOOO";
-    int singleHourMod;
-    String singleHourRow = "OOOO";
-    String currentSingleHourRow = "OOOO";
-    int fiveHourDiv;
-    String fiveHourRow = "OOOO";
-    String currentFiveHourRow = "OOOO";
-    int secondsMod;
-    String secondLamp = "O";
+    private int oneMinutesMod;
+    private String oneMinuteRow = "OOOO";
+    private String currentOneMinuteRow = "OOOO";
+    private int fiveMinutesDiv;
+    private int fiveMinutesDiv15;
+    private String fiveMinuteRow = "OOOOOOOOOOO";
+    private String currentFiveMinuteRow = "OOOOOOOOOOO";
+    private int singleHourMod;
+    private String singleHourRow = "OOOO";
+    private String currentSingleHourRow = "OOOO";
+    private int fiveHourDiv;
+    private String fiveHourRow = "OOOO";
+    private String currentFiveHourRow = "OOOO";
+    private int secondsMod;
+    private String secondLamp = "O";
 
-    public String oneMinuteRow(int minutes) {
+    public String singleMinuteRow(int minutes) {
         oneMinutesMod = minutes % 5;
         if (oneMinutesMod < 5) {
             for (int i = 0; i < oneMinutesMod; i++) {
@@ -47,7 +47,7 @@ public class BerlinClock {
         for (int i = 1; i < fiveMinutesDiv15 + 1; i++) {
             currentFiveMinuteRow15 = currentFiveMinuteRow15.substring(0, i * 3 - 1) + "R" + currentFiveMinuteRow.substring(i * 3 - 1 + 1);
         }
-        System.out.println(fiveMinutesDiv15);
+
         return currentFiveMinuteRow15;
     }
 
@@ -73,7 +73,7 @@ public class BerlinClock {
     public String secLamp(int seconds) {
         secondsMod = seconds % 2;
         if (secondsMod == 0) {
-            secondLamp = "R";
+            secondLamp = "Y";
         }
         return secondLamp;
     }

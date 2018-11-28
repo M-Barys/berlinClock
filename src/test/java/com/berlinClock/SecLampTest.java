@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class SecLampTest {
-    private final String secondsR = "R";
+    private final String secondsY = "Y";
     private final String secondsO = "O";
 
 
@@ -13,7 +13,7 @@ public class SecLampTest {
     public void secLampR1() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(secondsR, berlinClock.secLamp(0));
+        Assert.assertEquals(secondsY, berlinClock.secLamp(0));
 
     }
 

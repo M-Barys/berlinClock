@@ -14,7 +14,7 @@ public class SingleMinuteRowTest {
     public void singleMinuteRowOOOO1() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(OneMinuteRowOOOO, berlinClock.oneMinuteRow(0));
+        Assert.assertEquals(OneMinuteRowOOOO, berlinClock.singleMinuteRow(0));
 
     }
 
@@ -22,7 +22,7 @@ public class SingleMinuteRowTest {
     public void singleMinuteRowYYYY2() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(OneMinuteRowYYYY, berlinClock.oneMinuteRow(59));
+        Assert.assertEquals(OneMinuteRowYYYY, berlinClock.singleMinuteRow(59));
 
     }
 
@@ -30,7 +30,7 @@ public class SingleMinuteRowTest {
     public void singleMinuteRowYYOO3() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(OneMinuteRowYYOO, berlinClock.oneMinuteRow(32));
+        Assert.assertEquals(OneMinuteRowYYOO, berlinClock.singleMinuteRow(32));
 
     }
 
@@ -38,7 +38,7 @@ public class SingleMinuteRowTest {
     public void singleMinuteRowYYYY4() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(OneMinuteRowYYYY, berlinClock.oneMinuteRow(34));
+        Assert.assertEquals(OneMinuteRowYYYY, berlinClock.singleMinuteRow(34));
 
     }
 
@@ -46,7 +46,7 @@ public class SingleMinuteRowTest {
     public void singleMinuteRowOOOO5() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(OneMinuteRowOOOO, berlinClock.oneMinuteRow(35));
+        Assert.assertEquals(OneMinuteRowOOOO, berlinClock.singleMinuteRow(35));
 
     }
 
