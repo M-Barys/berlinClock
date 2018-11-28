@@ -21,6 +21,8 @@ public class BerlinClock {
     int fiveHourDiv;
     String fiveHourRow = "OOOO";
     String currentFiveHourRow = "OOOO";
+    int secondsMod;
+    String secondLamp = "O";
 
     public String oneMinuteRow(int minutes) {
         oneMinutesMod = minutes % 5;
@@ -66,5 +68,13 @@ public class BerlinClock {
 
         }
         return currentFiveHourRow;
+    }
+
+    public String secLamp(int seconds) {
+        secondsMod = seconds % 2;
+        if (secondsMod == 0) {
+            secondLamp = "R";
+        }
+        return secondLamp;
     }
 }
