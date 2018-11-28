@@ -1,12 +1,8 @@
 package com.berlinClock;
 
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-
 
 @NoArgsConstructor
-@AllArgsConstructor
-
 public class BerlinClock {
     private int oneMinutesMod;
     private String oneMinuteRow = "OOOO";
