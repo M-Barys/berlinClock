@@ -4,17 +4,17 @@ package com.berlinClock;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class OneMinuteBlockTest {
-    private final String OneMinuteBlockOOOO = "OOOO";
-    private final String OneMinuteBlockYYYY = "YYYY";
-    private final String OneMinuteBlockYYOO = "YYOO";
+public class SingleMinuteBlock {
+    private final String OneMinuteRowOOOO = "OOOO";
+    private final String OneMinuteRowYYYY = "YYYY";
+    private final String OneMinuteRowYYOO = "YYOO";
 
 
     @Test
     public void singleMinuteRowOOOO1() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(OneMinuteBlockOOOO, berlinClock.oneMinuteBlock(00));
+        Assert.assertEquals(OneMinuteRowOOOO, berlinClock.oneMinuteRow(00));
 
     }
 
@@ -22,7 +22,7 @@ public class OneMinuteBlockTest {
     public void singleMinuteRowYYYY2() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(OneMinuteBlockYYYY, berlinClock.oneMinuteBlock(59));
+        Assert.assertEquals(OneMinuteRowYYYY, berlinClock.oneMinuteRow(59));
 
     }
 
@@ -30,7 +30,7 @@ public class OneMinuteBlockTest {
     public void singleMinuteRowYYOO3() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(OneMinuteBlockYYOO, berlinClock.oneMinuteBlock(32));
+        Assert.assertEquals(OneMinuteRowYYOO, berlinClock.oneMinuteRow(32));
 
     }
 
@@ -38,7 +38,7 @@ public class OneMinuteBlockTest {
     public void singleMinuteRowYYYY4() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(OneMinuteBlockYYYY, berlinClock.oneMinuteBlock(34));
+        Assert.assertEquals(OneMinuteRowYYYY, berlinClock.oneMinuteRow(34));
 
     }
 
@@ -46,7 +46,7 @@ public class OneMinuteBlockTest {
     public void singleMinuteRowOOOO5() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(OneMinuteBlockOOOO, berlinClock.oneMinuteBlock(35));
+        Assert.assertEquals(OneMinuteRowOOOO, berlinClock.oneMinuteRow(35));
 
     }
 

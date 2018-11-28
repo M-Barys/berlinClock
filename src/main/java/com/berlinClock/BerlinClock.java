@@ -8,17 +8,38 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 
 public class BerlinClock {
-    int minutesMod;
-    String minutesBlock = "OOOO";
-    String currentMinuteBlock = new String("OOOO");
+    int oneMinutesMod;
+    String oneMinuteRow = "OOOO";
+    String currentOneMinuteRow = new String("OOOO");
+    int fiveMinutesDiv;
+    int fiveMinutesDiv15;
+    String fiveMinuteRow = "OOOOOOOOOOO";
+    String currentFiveMinuteRow = "OOOOOOOOOOO";
 
-    public String oneMinuteBlock(int minutes) {
-        minutesMod = minutes%5;
-        if(minutesMod < 5) {
-            for (int i = 0; i < minutesMod; i++) {
-                currentMinuteBlock = currentMinuteBlock.substring(0, i) + "Y" + minutesBlock.substring(i + 1);
+    public String oneMinuteRow(int minutes) {
+        oneMinutesMod = minutes%5;
+        if(oneMinutesMod < 5) {
+            for (int i = 0; i < oneMinutesMod; i++) {
+                currentOneMinuteRow = currentOneMinuteRow.substring(0, i) + "Y" + oneMinuteRow.substring(i + 1);
             }
         }
-        return  currentMinuteBlock;
+        return  currentOneMinuteRow;
+    }
+
+    public String fiveMinuteRow(int minutes) {
+        fiveMinutesDiv = minutes/5;
+        if(fiveMinutesDiv < 12) {
+            for (int i = 0; i < fiveMinutesDiv; i++) {
+                currentFiveMinuteRow = currentFiveMinuteRow.substring(0, i) + "Y" + fiveMinuteRow.substring(i + 1);
+            }
+        }
+
+        String currentFiveMinuteRow15 = currentFiveMinuteRow;
+        fiveMinutesDiv15 = minutes/15;
+        for (int i = 1; i < fiveMinutesDiv15+1; i++) {
+                currentFiveMinuteRow15 = currentFiveMinuteRow15.substring(0, i*3-1) + "R" + currentFiveMinuteRow.substring(i*3-1 + 1);
+            }
+        System.out.println(fiveMinutesDiv15);
+        return  currentFiveMinuteRow15;
     }
 }
