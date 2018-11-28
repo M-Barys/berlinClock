@@ -14,7 +14,7 @@ public class FiveMinuteRowTest {
     public void fiveMinuteRow1() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(fiveMinuteRow1, berlinClock.fiveMinuteRow(00));
+        Assert.assertEquals(fiveMinuteRow1, berlinClock.fiveMinuteRow(0));
 
     }
 
@@ -30,7 +30,7 @@ public class FiveMinuteRowTest {
     public void fiveMinuteRow3() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(fiveMinuteRow3, berlinClock.fiveMinuteRow(04));
+        Assert.assertEquals(fiveMinuteRow3, berlinClock.fiveMinuteRow(4));
 
     }
 

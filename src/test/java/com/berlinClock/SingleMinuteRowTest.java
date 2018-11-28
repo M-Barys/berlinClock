@@ -4,7 +4,7 @@ package com.berlinClock;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class SingleMinuteBlock {
+public class SingleMinuteRowTest {
     private final String OneMinuteRowOOOO = "OOOO";
     private final String OneMinuteRowYYYY = "YYYY";
     private final String OneMinuteRowYYOO = "YYOO";
@@ -14,7 +14,7 @@ public class SingleMinuteBlock {
     public void singleMinuteRowOOOO1() {
 
         BerlinClock berlinClock = new BerlinClock();
-        Assert.assertEquals(OneMinuteRowOOOO, berlinClock.oneMinuteRow(00));
+        Assert.assertEquals(OneMinuteRowOOOO, berlinClock.oneMinuteRow(0));
 
     }
 
