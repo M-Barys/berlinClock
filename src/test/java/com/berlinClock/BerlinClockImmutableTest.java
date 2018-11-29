@@ -67,4 +67,14 @@ public class BerlinClockImmutableTest {
         Assertions.assertThat(representation).isEqualTo("OOOOOOOOOOOOOOOOOOOOYYYY");
     }
 
+    @Test
+    public void testIntegratedBerlinClock() {
+        //Given
+        BerlinClockImmutable clock = new BerlinClockImmutable().integrateBerlinClock("23:59:21");
+        //When
+        String representation = clock.getRepresentation();
+        //Then
+        Assertions.assertThat(representation).isEqualTo("YYYYYYYYOYYYYYYYYYYYYYYY");
+    }
+
 }

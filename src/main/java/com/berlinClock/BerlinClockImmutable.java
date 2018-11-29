@@ -1,5 +1,6 @@
 package com.berlinClock;
 
+import com.sun.jndi.ldap.Ber;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -70,6 +71,29 @@ public class BerlinClockImmutable {
         BitSet changedState = new BitSet(24);
         changedState.xor(state);
         changedState.set(20, nrOfMinutes % 5 + 20);
+        return new BerlinClockImmutable(changedState);
+    }
+
+    public BerlinClockImmutable integrateBerlinClock(String actualTime){
+
+        int nrOfHours = Integer.valueOf(actualTime.substring(0, 2));
+        int nrOfMinutes = Integer.valueOf(actualTime.substring(3, 5));
+        int nrOfSeconds = Integer.valueOf(actualTime.substring(6));
+
+        BitSet changedState = new BitSet(24);
+        BerlinClockImmutable state[] = new BerlinClockImmutable[5];
+
+        state[0] = setSecond(nrOfSeconds);
+        state[1] = setMinutes(nrOfMinutes);
+        state[2] = setSingleMinutes(nrOfMinutes);
+        state[3] = setHours(nrOfHours);
+        state[4] = setSingleHours(nrOfHours);
+
+
+
+        for (int i = 0; i < state.length ; i++) {
+            changedState.xor(state[i].getState());
+        }
         return new BerlinClockImmutable(changedState);
     }
 
