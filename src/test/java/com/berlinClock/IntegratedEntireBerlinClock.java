@@ -3,7 +3,7 @@ package com.berlinClock;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class IntegratedEntireBerlinClock extends AbstractBerlinClockTime {
+public class IntegratedEntireBerlinClock {
     private final String checkTime1 = "YOOOOOOOOOOOOOOOOOOOOOOO";
     private final String checkTime2 = "ORRRRRRROYYRYYRYYRYYYYYY";
     private final String checkTime3 = "YRRROROOOYYRYYRYYRYOOOOO";
@@ -12,25 +12,29 @@ public class IntegratedEntireBerlinClock extends AbstractBerlinClockTime {
 
     @Test
     public void checkTime1() {
-        Assert.assertEquals(checkTime1, checkTime("00:00:00"));
-        System.out.println(checkTime("00:00:00") + "     00:00:00");
+        BerlinClock berlinClock = new BerlinClock();
+        Assert.assertEquals(checkTime1, berlinClock.checkTime("00:00:00"));
+        System.out.println(berlinClock.checkTime("00:00:00") + "     00:00:00");
     }
 
     @Test
     public void checkTime2() {
-        Assert.assertEquals(checkTime2, checkTime("23:59:59"));
-        System.out.println(checkTime("23:59:59") + "     23:59:59");
+        BerlinClock berlinClock = new BerlinClock();
+        Assert.assertEquals(checkTime2, berlinClock.checkTime("23:59:59"));
+        System.out.println(berlinClock.checkTime("23:59:59") + "     23:59:59");
     }
 
     @Test
     public void checkTime3() {
-        Assert.assertEquals(checkTime3, checkTime("16:50:06"));
-        System.out.println(checkTime("16:50:06") + "     16:50:06");
+        BerlinClock berlinClock = new BerlinClock();
+        Assert.assertEquals(checkTime3, berlinClock.checkTime("16:50:06"));
+        System.out.println(berlinClock.checkTime("16:50:06") + "     16:50:06");
     }
 
     @Test
     public void checkTime4() {
-        Assert.assertEquals(checkTime4, checkTime("11:37:01"));
-        System.out.println(checkTime("11:37:01") + "     11:37:01");
+        BerlinClock berlinClock = new BerlinClock();
+        Assert.assertEquals(checkTime4, berlinClock.checkTime("11:37:01"));
+        System.out.println(berlinClock.checkTime("11:37:01") + "     11:37:01");
     }
 }

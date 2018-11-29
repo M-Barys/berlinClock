@@ -73,4 +73,17 @@ public class BerlinClock {
         }
         return secondLamp;
     }
+
+    public String checkTime(String actualTime) {
+
+        int hours = Integer.valueOf(actualTime.substring(0, 2));
+        int minutes = Integer.valueOf(actualTime.substring(3, 5));
+        int seconds = Integer.valueOf(actualTime.substring(6));
+
+        BerlinClock berlinClock = new BerlinClock();
+
+        return  berlinClock.secLamp(seconds) + berlinClock.fiveHourRow(hours)
+                + berlinClock.singleHoursRow(hours) + berlinClock.fiveMinuteRow(minutes)
+                + berlinClock.singleMinuteRow(minutes);
+    }
 }
