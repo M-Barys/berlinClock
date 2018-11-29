@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.Arrays;
 import java.util.BitSet;
 
 public class BerlinClockImmutable {
@@ -26,16 +27,25 @@ public class BerlinClockImmutable {
 
     public String getRepresentation() {
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < 24 ; i++) {
+        for (int i = 0; i < 24; i++) {
             boolean b = state.get(i);
             if (b) {
-                builder.append("Y");
+                String on;
+                switch (i) {
+                    case 11:
+                    case 14:
+                    case 17:
+                        on = "R";
+                        break;
+                    default:
+                        on = "Y";
+                }
+                builder.append(on);
             } else {
                 builder.append("O");
             }
         }
 
-//        state.stream() TODO implement the same
         return builder.toString();
     }
 
@@ -49,7 +59,7 @@ public class BerlinClockImmutable {
     public BerlinClockImmutable setHours(int nrOfHours) {
         BitSet changedState = new BitSet(24);
         changedState.xor(state);
-        changedState.set(1, nrOfHours/5+1);
+        changedState.set(1, nrOfHours / 5 + 1);
         return new BerlinClockImmutable(changedState);
     }
 
@@ -74,7 +84,7 @@ public class BerlinClockImmutable {
         return new BerlinClockImmutable(changedState);
     }
 
-    public BerlinClockImmutable integrateBerlinClock(String actualTime){
+    public BerlinClockImmutable integrateBerlinClock(String actualTime) {
 
         int nrOfHours = Integer.valueOf(actualTime.substring(0, 2));
         int nrOfMinutes = Integer.valueOf(actualTime.substring(3, 5));
@@ -89,11 +99,10 @@ public class BerlinClockImmutable {
         state[3] = setHours(nrOfHours);
         state[4] = setSingleHours(nrOfHours);
 
-
-
-        for (int i = 0; i < state.length ; i++) {
+        for (int i = 0; i < state.length; i++) {
             changedState.xor(state[i].getState());
         }
+
         return new BerlinClockImmutable(changedState);
     }
 

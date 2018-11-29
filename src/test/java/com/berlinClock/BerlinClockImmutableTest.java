@@ -54,7 +54,7 @@ public class BerlinClockImmutableTest {
         //When
         String representation = clock.getRepresentation();
         //Then
-        Assertions.assertThat(representation).isEqualTo("OOOOOOOOOYYYYYYYYYYYOOOO");
+        Assertions.assertThat(representation).isEqualTo("OOOOOOOOOYYRYYRYYRYYOOOO");
     }
 
     @Test
@@ -74,7 +74,7 @@ public class BerlinClockImmutableTest {
         //When
         String representation = clock.getRepresentation();
         //Then
-        Assertions.assertThat(representation).isEqualTo("YYYYYYYYOYYYYYYYYYYYYYYY");
+        Assertions.assertThat(representation).isEqualTo("YYYYYYYYOYYRYYRYYRYYYYYY");
     }
 
 }
